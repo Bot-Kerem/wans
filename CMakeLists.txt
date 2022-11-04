@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.23)
 if(UNIX)
     find_package(glm REQUIRED)
 elseif(WIN32)
-    # TODO: add glfw3 submodule
+    add_subdirectory(third_party/glfw)
 endif()
 
 # glad
