@@ -35,7 +35,7 @@ class Window
         inline int getViewportWidth() const noexcept { return m_ViewportWidth; }
         inline int getViewportHeight() const noexcept { return m_ViewportHeight; }
         inline int isClosed() const noexcept { return glfwWindowShouldClose(m_Window); }
-        inline int getTitle() const noexcept { return m_Title; }
+        inline std::string getTitle() const noexcept { return m_Title; }
 
 
         void setFramebufferSizeCallback(void (*fn)(int, int)) noexcept;
