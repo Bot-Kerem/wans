@@ -1,9 +1,12 @@
 #include <stdio.h>
 
-
+#include <editor.h>
 
 int main(int argc, char const *argv[])
 {
-    printf("Hello World\n");
+    Editor editor;
+    
+    editor.run();
+
     return 0;
 }
