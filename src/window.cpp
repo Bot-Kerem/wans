@@ -36,10 +36,9 @@ void Window::pollEvents() noexcept
     glfwPollEvents();
     glfwGetWindowSize(m_Window, &m_Width, &m_Height);
     glfwGetCursorPos(m_Window, &m_MousePosX, &m_MousePosY);
-    auto a = [](int){return 1;};
 }
 
-void Window::setFramebufferSizeCallback(void (*fn)(int, int)) noexcept
+void Window::setFramebufferSizeCallback(void (AppBase::*fn)(int, int)) noexcept
 {
     glfwSetFramebufferSizeCallback(m_Window, _FramebufferSizeCallback);
     FramebufferSizeCallback = fn;
@@ -57,7 +56,7 @@ void Window::_FramebufferSizeCallback(IWindow _Window, int Width, int Height) no
 
     if(window->FramebufferSizeCallback)
     {
-        window->FramebufferSizeCallback(Width, Height);
+        //((*window)->*FramebufferSizeCallback)(Width, Height);
     }
 }
 
