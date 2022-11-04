@@ -6,6 +6,13 @@ elseif(WIN32)
     # TODO: add glfw3 submodule
 endif()
 
+# glad
+project(glad)
+
+add_library(glad third_party/glad/src/glad.c)
+target_include_directories(glad PUBLIC third_party/glad/include)
+# glad
+
 set(CMAKE_CXX_STANDAR 20)
 
 get_filename_component(DIR ${CMAKE_SOURCE_DIR} NAME)
@@ -18,4 +25,4 @@ add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
 
 target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_SOURCE_DIR}/include")
 
-target_link_libraries(${PROJECT_NAME} glfw glm)
+target_link_libraries(${PROJECT_NAME} glfw glm glad)
