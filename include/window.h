@@ -1,5 +1,6 @@
 #pragma once
 
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <string>
 
@@ -27,6 +28,7 @@ class Window
         Window(std::string Title, int Width, int Height);
 
         void pollEvents() noexcept;
+        inline void swapBuffers() const noexcept {glfwSwapBuffers(m_Window);}
 
         // 
         inline int getWidth() const noexcept { return m_Width; }
