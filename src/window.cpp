@@ -25,7 +25,8 @@ Window::Window(std::string Title, int Width, int Height)
     m_Window = glfwCreateWindow(Width, Height, Title.c_str(), nullptr, nullptr);
 
     glfwMakeContextCurrent(m_Window);
-    // TODOL: load gl
+    
+    gladLoadGLLoader((GLADloadproc)(glfwGetProcAddress));
 
     glfwSetWindowUserPointer(m_Window, this);
 }
