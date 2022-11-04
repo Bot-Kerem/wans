@@ -3,6 +3,9 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <string>
+#include <functional>
+
+class AppBase;
 
 typedef GLFWwindow* IWindow;
 
@@ -22,8 +25,9 @@ class Window
             static void _FramebufferSizeCallback(IWindow _Window, int Width, int Height) noexcept;
             static void _WindowSizeCallback(IWindow _Window, int Width, int Height) noexcept;
 
-            void (*FramebufferSizeCallback)(int, int) = nullptr;
             void (*WindowSizeCallback)(int, int) = nullptr;
+            void (AppBase::*FramebufferSizeCallback)(int, int) = nullptr;
+            //std::function<AppBase::void(int, int)> FramebufferSizeCallback;
     public:
         Window(std::string Title, int Width, int Height);
 
@@ -40,7 +44,7 @@ class Window
         inline std::string getTitle() const noexcept { return m_Title; }
 
         // Callbacks
-        void setFramebufferSizeCallback(void (*fn)(int, int)) noexcept;
+        void setFramebufferSizeCallback(void (AppBase::*fn)(int, int)) noexcept;
         void setWindowSizeCallback(void (*fn)(int, int)) noexcept;
 
         // removing copy constructors

@@ -2,9 +2,10 @@
 
 #include <glad/glad.h>
 
-Editor::Editor(): App{"Wans", 800, 1000}
+Editor::Editor(): AppBase{"Wans", 800, 1000}
 {
     glClearColor(0,1,0,1);
+    //m_Window.setFramebufferSizeCallback(c);
 }
 
 void Editor::render()

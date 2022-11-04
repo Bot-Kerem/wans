@@ -1,9 +1,14 @@
 #pragma once
 
-#include <app.h>
+#include <appbase.h>
 
-class Editor: public App
+class Editor: public AppBase
 {
+    private:
+        void c(int x, int y)
+        {
+
+        }
     public:
         Editor();
 
