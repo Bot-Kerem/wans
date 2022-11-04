@@ -2,13 +2,13 @@
 
 #include <window.h>
 
-class App
+class AppBase
 {
     protected:
         Window m_Window;
 
         virtual void render() = 0;
-        App(std::string Title, int Width, int Height):m_Window{Title, Width, Height} {}
+        AppBase(std::string Title, int Width, int Height);
     public:
         void run();
 };
