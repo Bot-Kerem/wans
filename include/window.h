@@ -37,7 +37,7 @@ class Window
         inline int isClosed() const noexcept { return glfwWindowShouldClose(m_Window); }
         inline std::string getTitle() const noexcept { return m_Title; }
 
-
+        // Callbacks
         void setFramebufferSizeCallback(void (*fn)(int, int)) noexcept;
         void setWindowSizeCallback(void (*fn)(int, int)) noexcept;
 
