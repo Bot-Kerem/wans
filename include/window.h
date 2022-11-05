@@ -5,8 +5,6 @@
 #include <string>
 #include <functional>
 
-class AppBase;
-
 typedef GLFWwindow* IWindow;
 
 class Window
@@ -24,10 +22,11 @@ class Window
 
             static void _FramebufferSizeCallback(IWindow _Window, int Width, int Height) noexcept;
             static void _WindowSizeCallback(IWindow _Window, int Width, int Height) noexcept;
+            static void _CursorPosCallback(IWindow _Window, double Width, double Height) noexcept;
 
-            void (*WindowSizeCallback)(int, int) = nullptr;
-            void (AppBase::*FramebufferSizeCallback)(int, int) = nullptr;
-            //std::function<AppBase::void(int, int)> FramebufferSizeCallback;
+            std::function<void(int, int)> WindowSizeCallback;
+            std::function<void(int, int)> FramebufferSizeCallback;
+            std::function<void(double, double)> CursorPosCallback;
     public:
         Window(std::string Title, int Width, int Height);
 
@@ -44,8 +43,9 @@ class Window
         inline std::string getTitle() const noexcept { return m_Title; }
 
         // Callbacks
-        void setFramebufferSizeCallback(void (AppBase::*fn)(int, int)) noexcept;
-        void setWindowSizeCallback(void (*fn)(int, int)) noexcept;
+        void setFramebufferSizeCallback(std::function<void(int, int)> fn) noexcept;
+        void setWindowSizeCallback(std::function<void(int, int)> fn) noexcept;
+        void setCursorPosCallback(std::function<void(double, double)> fn) noexcept;
 
         // removing copy constructors
         Window(const Window&) = delete;
