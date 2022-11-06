@@ -16,12 +16,15 @@ void Widget::destroy() noexcept
 Widget::Widget(float Width, float Height) noexcept
     : m_Width{Width}, m_Height{Height}
 {
-    m_Framebuffer = std::make_unique<Framebuffer>(Framebuffer(m_Width, m_Height));
+    m_Framebuffer = std::make_unique<Framebuffer>(m_Width, m_Height);
 }
 
 void Widget::draw() noexcept
 {
-    // pass
+    Renderer::SetViewport(m_Width, m_Height);
+    TextureShader->use();
+    m_Framebuffer->setTexture();
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 }
 
 void Widget::update() noexcept
@@ -34,8 +37,8 @@ void Widget::update() noexcept
 
     Renderer::SetViewport(m_Width, m_Height);
     m_Framebuffer->begin();
-    this->draw();
+    create_image();
     m_Framebuffer->end();
 
-    m_Parent->update();
+    if(m_Parent) m_Parent->update();
 }
