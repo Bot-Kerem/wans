@@ -6,10 +6,9 @@ extern Theme theme;
 
 MainViewport::MainViewport(float Width, float Height): Widget(Width, Height)
 {
-
 }
 
-void MainViewport::create_image()
+void MainViewport::create_image() const noexcept
 {
-    Renderer::Clear(theme[ThemeCol_TopBar]);
+    Renderer::Clear(theme[ThemeCol_Background]);
 }
