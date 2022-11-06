@@ -1,2 +1,2 @@
 # Wans
-Cross platform code editor
+Cross platform code editor.
