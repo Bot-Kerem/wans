@@ -9,6 +9,7 @@ class AppBase
 
         virtual void render() = 0;
         AppBase(std::string Title, int Width, int Height);
+        ~AppBase();
     public:
         void run();
 };
