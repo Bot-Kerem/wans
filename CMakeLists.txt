@@ -4,6 +4,7 @@ if(UNIX)
     find_package(glm REQUIRED)
 elseif(WIN32)
     add_subdirectory(third_party/glfw)
+    add_subdirectory(third_party/glm)
 endif()
 
 # glad
