@@ -14,5 +14,10 @@ void Widget::draw() noexcept
 void Widget::update() noexcept
 {
     // create_image();
+    for(Widget* widget: m_Childs)
+    {
+        widget->draw();
+    }
+    this->draw();
     m_Parent->update();
 }
