@@ -27,7 +27,13 @@ class Framebuffer
             return m_Texture;
         }
 
+        inline void setTexture() const noexcept
+        {
+            glActiveTexture(GL_TEXTURE0);
+            glBindTexture(GL_TEXTURE_2D, m_Texture);
+        }
+
         // Deleting copy assignment operator and copy constructor
-        //Framebuffer(const Framebuffer&) = delete;
+        Framebuffer(const Framebuffer&) = delete;
         Framebuffer& operator = (const Framebuffer&) = delete;
 };
