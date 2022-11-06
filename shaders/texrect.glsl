@@ -19,5 +19,5 @@ out vec2 TextureCoord;
 void main()
 {
     gl_Position = vec4(rect[gl_VertexID], 0.0f, 1.0f);
-    TextureCoord = tex[gl_VertexID]
+    TextureCoord = tex[gl_VertexID];
 }
