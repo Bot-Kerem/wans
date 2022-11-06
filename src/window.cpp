@@ -33,7 +33,8 @@ Window::Window(std::string Title, int Width, int Height)
 
 void Window::pollEvents() noexcept
 {
-    glfwPollEvents();
+    //glfwPollEvents();
+    glfwWaitEvents();
     glfwGetWindowSize(m_Window, &m_Width, &m_Height);
     glfwGetCursorPos(m_Window, &m_MousePosX, &m_MousePosY);
 }
