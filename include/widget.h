@@ -18,10 +18,16 @@ class Widget
         inline static Shader* RectShader = nullptr;
         inline static Shader* TextureShader = nullptr;
     public:
+        virtual void setSize(float Width, float Height) noexcept
+        {
+            m_Width = Width;
+            m_Height = Height;
+            update();
+        }
         static void init() noexcept;
         static void destroy() noexcept;
         Widget(float Width, float Height) noexcept;
         void draw() noexcept;
         void update() noexcept;
-        virtual void create_image() = 0;
+        virtual void create_image() const noexcept = 0;
 };
