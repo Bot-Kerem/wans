@@ -1,4 +1,5 @@
 #include <widget.h>
+#include <renderer.h>
 
 void Widget::init() noexcept
 {
@@ -30,6 +31,11 @@ void Widget::update() noexcept
     {
         widget->draw();
     }
+
+    Renderer::SetViewport(m_Width, m_Height);
+    m_Framebuffer->begin();
     this->draw();
+    m_Framebuffer->end();
+
     m_Parent->update();
 }
