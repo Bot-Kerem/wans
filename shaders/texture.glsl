@@ -7,5 +7,5 @@ uniform sampler2D inTexture;
 
 void main()
 {
-    FragColor = texture(inTexture, TextureCoord).rgba;
+    FragColor = texture(inTexture, TextureCoord);
 }
