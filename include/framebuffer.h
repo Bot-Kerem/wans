@@ -22,12 +22,12 @@ class Framebuffer
             glBindFramebuffer(GL_FRAMEBUFFER, 0);
         }
 
-        inline void getTexture() const noexcept
+        inline unsigned int getTexture() const noexcept
         {
             return m_Texture;
         }
 
         // Deleting copy assignment operator and copy constructor
-        Framebuffer(const Framebuffer&) = delete;
+        //Framebuffer(const Framebuffer&) = delete;
         Framebuffer& operator = (const Framebuffer&) = delete;
 };
