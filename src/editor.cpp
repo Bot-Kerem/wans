@@ -4,6 +4,9 @@
 
 #include <functional>
 
+#include <theme.h>
+extern Theme theme;
+
 void Editor::setViewport(int w, int h)
 {
     glViewport(0, 0, w, h);
