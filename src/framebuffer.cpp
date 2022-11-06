@@ -22,5 +22,7 @@ Framebuffer::Framebuffer(float Width, float Height) noexcept
 
 Framebuffer::~Framebuffer() noexcept
 {
+    glDeleteTextures(1, &m_Texture);
     glDeleteFramebuffers(1, &m_Framebuffer);
+    glDeleteRenderbuffers(1, &m_Renderbuffer);
 }
