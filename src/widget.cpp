@@ -1,5 +1,17 @@
 #include <widget.h>
 
+void Widget::init() noexcept
+{
+    RectShader = new Shader{"shaders/rect.glsl", "shaders/fragment.glsl"};
+    TextureShader = new Shader{"shaders/texrect.glsl", "shaders/texture.glsl"};
+}
+
+void Widget::destroy() noexcept
+{
+    delete RectShader;
+    delete TextureShader;
+}
+
 Widget::Widget(float Width, float Height) noexcept
     : m_Width{Width}, m_Height{Height}
 {
