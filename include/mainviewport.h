@@ -7,5 +7,5 @@ class MainViewport: public Widget
     private:
     public:
         MainViewport(float Width, float Height);
-        void create_image() override;
+        void create_image() const noexcept override; 
 };
