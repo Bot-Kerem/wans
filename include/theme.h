@@ -8,13 +8,14 @@ typedef glm::vec3 _Color;
 enum ThemeCol_
 {
     ThemeCol_Background = 0,
-    ThemeCol_TopBar     = 1
+    ThemeCol_TopBar     = 1,
+    ThemeCol_SideBar    = 2
 };
 
 class Theme
 {
     private:
-        _Color colors[2];
+        _Color colors[3];
     public:
         Theme();
 
