@@ -22,6 +22,10 @@ class Widget
         {
             m_Width = Width;
             m_Height = Height;
+            for(auto& widget: m_Childs)
+            {
+                setSize(Width, Height);
+            }
             update();
         }
         static void init() noexcept;
