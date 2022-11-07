@@ -15,6 +15,7 @@ target_include_directories(glad PUBLIC third_party/glad/include)
 # glad
 
 set(CMAKE_CXX_STANDAR 20)
+set(CMAKE_BUILD_TYPE Debug)
 
 get_filename_component(DIR ${CMAKE_SOURCE_DIR} NAME)
 
