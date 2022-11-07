@@ -7,6 +7,9 @@ elseif(WIN32)
     add_subdirectory(third_party/glm)
 endif()
 
+add_subdirectory(third_party/imgui)
+
+
 # glad
 project(glad)
 
@@ -27,4 +30,4 @@ add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
 
 target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_SOURCE_DIR}/include")
 
-target_link_libraries(${PROJECT_NAME} glfw glm glad)
+target_link_libraries(${PROJECT_NAME} glfw glm imgui glad)

@@ -41,4 +41,6 @@ class Widget
         void draw() noexcept;
         void update() noexcept;
         virtual void create_image() const noexcept = 0;
+
+        friend class WidgetEditor;
 };

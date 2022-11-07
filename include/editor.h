@@ -4,6 +4,7 @@
 #include <shader.h>
 #include <mainviewport.h>
 #include <topbar.h>
+#include <widgeteditor.h>
 
 class Editor: public AppBase
 {
@@ -15,6 +16,7 @@ class Editor: public AppBase
         void setViewport(int w, int h);
 
         MainViewport m_MainViewport;
+        WidgetEditor m_WidgetEditor;
     public:
         Editor();
 

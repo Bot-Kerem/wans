@@ -10,5 +10,5 @@ class MainViewport: public Widget
     public:
         MainViewport(float Width, float Height);
         void create_image() const noexcept override;
-        TopBar topBar;
+        //TopBar topBar;
 };
