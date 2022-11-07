@@ -15,7 +15,6 @@ class Editor: public AppBase
         void setViewport(int w, int h);
 
         MainViewport m_MainViewport;
-        TopBar m_TopBar;
     public:
         Editor();
 
